@@ -2,7 +2,7 @@
 	"name": "server",
 	"version": "1.0.0",
 	"description": "",
-	"main": "server.js",
+	"main": "build/src/server.js",
 	"scripts": {
 		"start": "node .",
 		"dev": "nodemon --files src/server.ts --project .",
