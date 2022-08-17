@@ -2,10 +2,18 @@ import express from 'express';
 import cors from 'cors';
 import { getTestResults } from './utils';
 import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
+dotenv.config();
+
 const app = express();
 const port = 3001;
 
-app.use(cors());
+app.use(
+	cors({
+		credentials: false,
+		origin: process.env.WEBSITE_URL,
+	})
+);
 app.use(bodyParser.json());
 
 app.post('/kata/test', async (req, res) => {
